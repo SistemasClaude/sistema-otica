@@ -1,0 +1,45 @@
+rules_version = '2';
+
+// Regras de segurança da Sua Ótica.
+// Cole este arquivo inteiro em: Firebase → Firestore Database → Regras → Publicar.
+// Troque o e-mail abaixo se a conta da ótica for outra (precisa ser igual ao de js/firebase-config.js).
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function dona() {
+      return request.auth != null
+        && request.auth.token.email.lower() == 'email-da-otica@exemplo.com';
+    }
+
+    // Dados da loja: qualquer pessoa lê (o catálogo precisa), só a dona altera.
+    match /config/loja {
+      allow read: if true;
+      allow write: if dona();
+    }
+
+    // Vitrine pública: sem custo nem quantidade, só o que o cliente pode ver.
+    match /catalogo/{id} {
+      allow read: if true;
+      allow write: if dona();
+    }
+
+    // Pedidos do botão "Quero este": qualquer pessoa cria, só a dona lê e altera.
+    match /pedidos/{id} {
+      allow create: if request.resource.data.keys().hasOnly(['produtoId', 'produtoNome', 'nome', 'telefone', 'bairro', 'mensagem', 'status', 'criadoEm'])
+        && request.resource.data.status == 'novo'
+        && request.resource.data.criadoEm == request.time
+        && request.resource.data.produtoId is string && request.resource.data.produtoId.size() < 64
+        && request.resource.data.produtoNome is string && request.resource.data.produtoNome.size() <= 200
+        && request.resource.data.nome is string && request.resource.data.nome.size() >= 2 && request.resource.data.nome.size() <= 80
+        && request.resource.data.telefone is string && request.resource.data.telefone.size() >= 10 && request.resource.data.telefone.size() <= 30
+        && request.resource.data.bairro is string && request.resource.data.bairro.size() <= 80
+        && request.resource.data.mensagem is string && request.resource.data.mensagem.size() <= 400;
+      allow read, update, delete: if dona();
+    }
+
+    // Estoque com custo, clientes com receitas (dado de saúde) e vendas: somente a dona.
+    match /produtos/{id} { allow read, write: if dona(); }
+    match /clientes/{id} { allow read, write: if dona(); }
+    match /vendas/{id} { allow read, write: if dona(); }
+  }
+}

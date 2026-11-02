@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Logo da ótica">
+  <!-- Logo neutro de demonstração. Troque por assets/logo da ótica cliente quando fechar a venda. -->
+  <defs>
+    <radialGradient id="ouro" cx="35%" cy="30%" r="80%">
+      <stop offset="0" stop-color="#f6dc93"/>
+      <stop offset="0.55" stop-color="#c99a2e"/>
+      <stop offset="1" stop-color="#8a6212"/>
+    </radialGradient>
+    <linearGradient id="aro" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff3cf"/>
+      <stop offset="1" stop-color="#c99a2e"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="94" fill="url(#ouro)"/>
+  <circle cx="100" cy="100" r="84" fill="none" stroke="url(#aro)" stroke-width="3" opacity="0.8"/>
+  <g fill="rgba(255,253,248,0.22)" stroke="#2a2118" stroke-width="8" stroke-linejoin="round">
+    <path d="M38 98 Q37 80 55 78 L83 77 Q93 77 92 90 Q90 122 66 122 Q42 122 38 98Z"/>
+    <path d="M162 98 Q163 80 145 78 L117 77 Q107 77 108 90 Q110 122 134 122 Q158 122 162 98Z"/>
+  </g>
+  <path d="M92 88 Q100 81 108 88" fill="none" stroke="#2a2118" stroke-width="6" stroke-linecap="round"/>
+  <path d="M38 92 L24 86 M162 92 L176 86" stroke="#2a2118" stroke-width="6" stroke-linecap="round"/>
+  <path d="M50 88 Q56 84 64 85" stroke="#fffdf8" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.9"/>
+  <path d="M146 46 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z" fill="#fffdf8"/>
+</svg>

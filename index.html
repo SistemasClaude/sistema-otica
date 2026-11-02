@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sua Ótica · Catálogo</title>
+  <meta name="description" content="Escolha sua armação e receba a visita da Sua Ótica em casa.">
+  <meta property="og:title" content="Sua Ótica · Catálogo">
+  <meta property="og:description" content="Escolha sua armação e receba a visita em casa.">
+  <meta property="og:image" content="assets/logo.svg">
+  <meta name="theme-color" content="#fbf8f1">
+  <link rel="icon" href="assets/logo.svg">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/catalogo.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-interno">
+      <img src="assets/logo.svg" alt="Sua Ótica" class="hero-logo">
+      <span class="hero-selo" id="selo">Atendimento em domicílio</span>
+      <h1 class="hero-titulo" id="slogan">Seus óculos novos, no conforto da sua casa.</h1>
+      <p class="hero-texto" id="texto">Escolha a armação que mais combina com você. Eu levo até a sua casa para você experimentar sem compromisso.</p>
+      <a class="btn btn-g btn-brilho" id="agendar" hidden target="_blank" rel="noopener">Agendar uma visita</a>
+    </div>
+  </header>
+
+  <main class="conteudo">
+    <div class="barra">
+      <h2 class="subtitulo">Armações disponíveis <span id="contagem"></span></h2>
+      <div class="chips" id="filtros"></div>
+    </div>
+    <div id="vitrine" class="grade">
+      <div class="esqueleto cartao-esq"></div><div class="esqueleto cartao-esq"></div><div class="esqueleto cartao-esq"></div>
+    </div>
+  </main>
+
+  <section class="como">
+    <h2>Como funciona</h2>
+    <ol class="passos">
+      <li><span class="passo-num">1</span><strong>Escolha pelo celular</strong><p>Toque em “Quero este” nas armações que gostar.</p></li>
+      <li><span class="passo-num">2</span><strong>Eu levo até você</strong><p>Combinamos um horário e você experimenta em casa, sem compromisso.</p></li>
+      <li><span class="passo-num">3</span><strong>Pague como preferir</strong><p>Pix, cartão, dinheiro ou crediário em parcelas.</p></li>
+    </ol>
+  </section>
+
+  <footer class="rodape">
+    <img src="assets/logo.svg" alt="" class="rodape-logo">
+    <div class="rodape-texto"><strong id="rodapeNome">Sua Ótica</strong><span id="rodapeInfo"></span></div>
+    <a href="painel.html" class="rodape-area">Área da ótica</a>
+  </footer>
+
+  <script type="module" src="js/catalogo.js"></script>
+</body>
+</html>

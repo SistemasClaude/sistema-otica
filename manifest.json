@@ -1,0 +1,9 @@
+{
+  "name": "Sua Ótica · Painel",
+  "short_name": "Sua Ótica",
+  "start_url": "painel.html",
+  "display": "standalone",
+  "background_color": "#fbf8f1",
+  "theme_color": "#fffdf8",
+  "icons": [{ "src": "assets/logo.svg", "sizes": "any", "type": "image/svg+xml" }]
+}
